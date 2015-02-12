@@ -124,4 +124,12 @@ class Spreadsheet
         return Util::getLinkHref($this->xml, self::REL_WORKSHEETS_FEED);
     }
 
+    /**
+    * Returns the public URL for the spreadsheet that can be provided to users
+    * Initial testing indicates this always provides the URI to access the spreadsheet in the browser but I can't find this documented anywhere to know it will be consistant. 
+    * @return string
+    */
+    public function getSpreadsheetUrl() {
+        return Util::getLinkHref($this->xml, 'alternate');
+    }
 }
